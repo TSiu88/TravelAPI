@@ -29,6 +29,13 @@
 ---
 ## Description
 
+#### 3/30/20 Work at Home Summary
+- CretaceousPark Example
+- Console API Call Example
+- MVC API Call Example
+- Travel API
+- Struggles:
+  - objects null inside query
 _README under construction_
 <!-- _Detailed desc w/ purpose/usage, what does, motivation to create, why exists, other info for users/developers to have_ -->
 
@@ -49,22 +56,16 @@ _This program also makes use of SQL databases. We recommend using MySQL Workbenc
 
 ### Instructions
 
-<!-- *This application may be viewed by:*
+*This application may be viewed by:*
 
 1. Download and install .NET Core from the [official website](https://dotnet.microsoft.com/download/dotnet-core/)
 2. Download and install MySQL Workbench and Community Server for Mac or Windows by following the instructions [here](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-and-configuring-mysql).
-3. Click clone the [repository](https://github.com/TSiu88/HairSalon.git) from my [GitHub page](https://github.com/TSiu88) to copy the repository link
+3. Click clone the [repository](https://github.com/TSiu88/TravelAPI.git) from my [GitHub page](https://github.com/TSiu88) to copy the repository link
 4. Use a command line interface to type `git clone (repository-link-here)` to copy the project into the current folder and then move into the repository's directory that was just created with `cd (project-name-here)`
 5. Start up a local server by opening MySQL Workbench and adding a `MySQL Connections` using the default IP address and Port (IP 127.0.0.1, Port 3306), username (root), and password from setup.
-6. Construct the database by entering in the following lines under the `Query 1` section and then clicking execute:
-  >
-    CREATE DATABASE tiffany_siu;
-    USE tiffany_siu;
-    CREATE TABLE stylists (id serial PRIMARY KEY, name VARCHAR(255));
-    CREATE TABLE clients (id serial PRIMARY KEY, description VARCHAR(255));
-7. Run `dotnet restore` and `dotnet build` in command line interface of the repository's main project directory
-8. Run `dotnet run` to start up the program in the command line interface
-9. Type the URL listed under "Now listening on:" into a web browser to run -->
+6. Run `dotnet restore` and `dotnet build` in command line interface of the repository's main project directory
+7. Run `dotnet run` to start up the program in the command line interface
+8. Type the URL listed under "Now listening on:" into a web browser to run
 
 ## Other Technologies Used
 * _C#_

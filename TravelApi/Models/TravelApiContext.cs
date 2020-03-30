@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+// using Microsoft.EntityFrameworkCore.Proxies;
 
 namespace TravelApi.Models
 {
@@ -14,6 +16,10 @@ namespace TravelApi.Models
         public DbSet<City> Cities { get; set; }
         public DbSet<Review> Reviews { get; set; }
 
+        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        // {
+        //     optionsBuilder.UseLazyLoadingProxies();
+        // }
       protected override void OnModelCreating(ModelBuilder builder)
     {
       builder.Entity<Country>()
@@ -35,7 +41,7 @@ namespace TravelApi.Models
         new City { CityId = 5, CountryId = 5, CityName = "Moscow"},
         new City { CityId = 6, CountryId = 2, CityName = "Beijing"}
       );
-      // .WithRequired(c => c.Country);
+      // .HasRequired<City>(c => c.CityId);
 
       builder.Entity<Review>()
       .HasData(

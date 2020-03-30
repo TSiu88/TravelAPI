@@ -21,6 +21,13 @@ namespace TravelApi.Controllers
     [HttpGet]
     public ActionResult<IEnumerable<City>> Get()
     {
+      // List<Cities> cities = _db.Cities.ToList();
+      // cities.forEach(element => {
+      //    query = _db.Countries.AsQueryable();
+      //    query = query.Where(entry => entry.CountryId == element.CountryId);
+      //    element.Country = query;
+      // });
+      // return cities;
       return _db.Cities.ToList();
     }
 
