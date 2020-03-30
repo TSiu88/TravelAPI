@@ -19,13 +19,15 @@ namespace TravelApi.Controllers
 
     // GET api/reviews
     [HttpGet]
-    public ActionResult<IEnumerable<Review>> Get(int cityId, string country)
+    public ActionResult<IEnumerable<Review>> Get(string city, string country)
     {
       var query = _db.Reviews.AsQueryable();
+      //query.Configuration.LazyLoadingEnabled = false;
 
       if (city != null)
       {
-        query = query.Where(entry => entry.City.CityId == cityId);
+
+        query = query.Where(entry => entry.City.CityName == city);
       }
       if (country != null)
       {

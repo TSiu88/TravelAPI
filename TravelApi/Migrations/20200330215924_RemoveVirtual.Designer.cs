@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TravelApi.Models;
 
 namespace TravelApi.Migrations
 {
     [DbContext(typeof(TravelApiContext))]
-    partial class TravelApiContextModelSnapshot : ModelSnapshot
+    [Migration("20200330215924_RemoveVirtual")]
+    partial class RemoveVirtual
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,7 +51,7 @@ namespace TravelApi.Migrations
                         new
                         {
                             CityId = 3,
-                            CityName = "Singapore",
+                            CityName = "Singapore ",
                             CountryId = 3
                         },
                         new
@@ -200,16 +202,6 @@ namespace TravelApi.Migrations
                             Date = new DateTime(2020, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Rating = 4.0,
                             Title = "Museums and the Eiffel Tower",
-                            UserName = "Mari"
-                        },
-                        new
-                        {
-                            ReviewId = 7,
-                            CityId = 6,
-                            Content = "Very large and very crowded",
-                            Date = new DateTime(2020, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Rating = 2.0,
-                            Title = "Forbidden City",
                             UserName = "Mari"
                         });
                 });
