@@ -35,7 +35,11 @@
 - MVC API Call Example
 - Travel API
 - Struggles:
-  - objects null inside query
+  - objects null inside query, due to lazy loading proxies?
+  - virtual objects inside models
+  - seed data not appearing
+  - lazy loading proxies and entity framework version conflicts
+
 _README under construction_
 <!-- _Detailed desc w/ purpose/usage, what does, motivation to create, why exists, other info for users/developers to have_ -->
 

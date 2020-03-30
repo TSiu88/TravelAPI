@@ -22,7 +22,6 @@ namespace TravelApi.Controllers
     public ActionResult<IEnumerable<Review>> Get(string city, string country)
     {
       var query = _db.Reviews.AsQueryable();
-      //query.Configuration.LazyLoadingEnabled = false;
 
       if (city != null)
       {
