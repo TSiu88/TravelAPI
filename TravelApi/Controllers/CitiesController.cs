@@ -36,15 +36,25 @@ namespace TravelApi.Controllers
       return query.ToList();
     }
 
+    // GET api/popular/byoverallrating
+    [HttpGet("popular/byoverallrating")]
+    public ActionResult<IEnumerable<City>> GetPopularByRating()
+    {
+      var query = _db.Cities.Include(entry => entry.Country).OrderByDescending(city => city.OverallRating).AsQueryable();
+
+      // var avg = _db.Cities.Where(entity => entity.CityName == city).Average(c => c.Reviews).AsQueryable();
+
+      return query.ToList();
+    }
+
     // GET api/popular/byreviews
     [HttpGet("popular/byreviews")]
-    public ActionResult<IEnumerable<City>> GetPopular(string action)
+    public ActionResult<IEnumerable<City>> GetPopularByReviews()
     {
       var query = _db.Cities.Include(entry => entry.Country).OrderByDescending(city => city.Reviews.Count).AsQueryable();
 
       return query.ToList();
     }
-
 
     // POST api/cities
     [HttpPost]
