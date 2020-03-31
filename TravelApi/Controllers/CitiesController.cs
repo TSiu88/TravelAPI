@@ -36,15 +36,19 @@ namespace TravelApi.Controllers
       return query.ToList();
     }
 
+    // BROKEN CODE BELOW:
+    // Attempted to return a list of cities sorted by overall/average rating
     // GET api/popular/byoverallrating
     [HttpGet("popular/byoverallrating")]
-    public ActionResult<IEnumerable<City>> GetPopularByRating()
+    public ActionResult<double> GetPopularByRating(string city)
     {
-      var query = _db.Cities.Include(entry => entry.Country).OrderByDescending(city => city.OverallRating).AsQueryable();
+      // var query = _db.Cities.Include(entry => entry.Country).OrderByDescending(city => city.OverallRating).AsQueryable();
+      // var average = _db.Cities.Where(c=>c.CityName == city).Include(e=>e.Reviews).Select(c=>c.Rating).Average();
 
-      // var avg = _db.Cities.Where(entity => entity.CityName == city).Average(c => c.Reviews).AsQueryable();
+      // var avg = _db.Cities.Include(entry => entry.Reviews).Average(city => city.Reviews.Rating).AsQueryable();
 
-      return query.ToList();
+      var av = _db.Cities.Include(entry => entry.Reviews).SelectMany(entry => entry.Reviews).Average(x => x.Rating);
+      return av; // returns average rating of ALL cities
     }
 
     // GET api/popular/byreviews

@@ -1,6 +1,6 @@
 # _[Travel API](https://github.com/TSiu88/TravelApi)_
 
-#### _Brief desc of Project, 03.30.2020_
+#### _Brief desc of Project, 03.30.2020 - 03.31.2020_
 
 #### By _**Tiffany Siu, Jiwon Han, and Adela Darmansyah**_
 

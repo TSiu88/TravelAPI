@@ -41,16 +41,27 @@ namespace TravelApi.Controllers
     public void Post([FromBody] Review review)
     {
       _db.Reviews.Add(review);
-      // update overall rating here
-      if (review.City.Reviews.Count < 2)
-      {
-        review.City.OverallRating = review.Rating;
-      } 
-      else
-      {
-        review.City.OverallRating = (review.City.OverallRating + review.Rating) / 2;
-      }
-      _db.SaveChanges();   
+      _db.SaveChanges();  
+      // if (review.City.Reviews.Count < 2)
+      // {
+      //   review.City.OverallRating = review.Rating;
+      // }
+      // else
+      // {
+      //   review.City.OverallRating = (review.City.OverallRating + review.Rating)/2;
+      // }
+      // var selectedCity = _db.Cities.Where(city => city.CityId == review.CityId).Include(city => city.Reviews);
+      // //update overall rating here
+      // if (selectedCity.Reviews.Count < 2)
+      // {
+      //   selectedCity.OverallRating = review.Rating;
+      // } 
+      // else
+      // {
+      //   selectedCity.OverallRating = (selectedCity.OverallRating + review.Rating) / 2;
+      // }
+      // _db.Entry(selectedCity).State = EntityState.Modified;
+      // _db.SaveChanges();   
     }
 
     [HttpPut("{id}")]
