@@ -9,6 +9,7 @@ namespace TravelApi.Models
         public TravelApiContext(DbContextOptions<TravelApiContext> options)
             : base(options)
         {
+          // Database.EnsureCreated();
         }
 
         public DbSet<Country> Countries {get; set;}

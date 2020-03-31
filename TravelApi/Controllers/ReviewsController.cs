@@ -22,16 +22,16 @@ namespace TravelApi.Controllers
     [HttpGet]
     public ActionResult<IEnumerable<Review>> Get(string city, string country)
     {
-      var query = _db.Reviews.AsQueryable();
+      var query = _db.Reviews.Include(entry => entry.City).AsQueryable();
 
       if (city != null)
       {
         query = query.Where(entry => entry.City.CityName == city);
       }
-      // if (country != null)
-      // {
-      //   query = query.Where(entry => entry.City.Country.CountryName == country);
-      // }
+      if (country != null)
+      {
+        query = query.Where(entry => entry.City.Country.CountryName == country);
+      }
      
       return query.ToList();
 
