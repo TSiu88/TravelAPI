@@ -18,5 +18,6 @@ namespace TravelApi.Models
     public virtual City City {get; set;}
 
   }
+  
 
 }

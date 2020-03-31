@@ -17,5 +17,4 @@ namespace TravelApi.Models
       this.Reviews = new HashSet<Review>();
     }
   }
-    
 }

@@ -54,7 +54,6 @@ namespace TravelApi.Models
       // .HasMany(city=>city.Reviews)
       // .WithOne(review=>review.City);
 
-      
 
       builder.Entity<Review>()
       .HasData(

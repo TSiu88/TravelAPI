@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using TravelApi.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace TravelApi.Controllers
 {
@@ -25,14 +26,13 @@ namespace TravelApi.Controllers
 
       if (city != null)
       {
-
         query = query.Where(entry => entry.City.CityName == city);
       }
-      if (country != null)
-      {
-        query = query.Where(entry => entry.City.Country.CountryName == country);
-      }
-
+      // if (country != null)
+      // {
+      //   query = query.Where(entry => entry.City.Country.CountryName == country);
+      // }
+     
       return query.ToList();
 
     }
