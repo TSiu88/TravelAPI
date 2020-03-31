@@ -29,6 +29,14 @@
 ---
 ## Description
 
+#### 3/31/20 Work at Home Summary
+- Travel API
+- Struggles:
+  - return type for api calls
+  - GET for popular by number of reviews
+  - get average of ratings and show
+  - calculate average of ratings when creating reviews
+
 #### 3/30/20 Work at Home Summary
 - CretaceousPark Example
 - Console API Call Example
