@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using TravelApi.Models;
 using Microsoft.EntityFrameworkCore;
+// using Newtonsoft.Json;
 
 namespace TravelApi.Controllers
 {
@@ -34,6 +35,31 @@ namespace TravelApi.Controllers
      
       return query.ToList();
     }
+
+    // GET api/popular/{action}
+    [HttpGet("/popular/{action}")]
+    public ActionResult<IEnumerable<int>> GetPopular(string action)
+    {
+      if (action == "byReviews")
+      {
+        Dictionary<int, int> citiesReviewCount = new Dictionary<int, int> ();
+        foreach(City city in _db.Cities)
+        {
+          citiesReviewCount.Add(city.CityId, city.Reviews.Count());
+        }
+        citiesReviewCount.OrderBy(reviewCount => reviewCount.Value);
+        // return JsonConvert.SerializeObject(citiesReviewCount);
+        return citiesReviewCount.Keys.ToList();
+        // var query = from n in citiesReviewCount.Select(n.Value);
+        // return query.ToList();
+      }
+      else if (action == "byRating")
+      {
+
+      }
+      return new List<int> ();
+    }
+
 
     // POST api/cities
     [HttpPost]

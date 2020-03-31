@@ -1,8 +1,8 @@
-# _[Travel API](https://github.com/TSiu88/#)_
+# _[Travel API](https://github.com/TSiu88/TravelApi)_
 
 #### _Brief desc of Project, 03.30.2020_
 
-#### By _**Tiffany Siu and Jiwon Han**_
+#### By _**Tiffany Siu, Jiwon Han, and Adela Darmansyah**_
 
 <!-- [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive) -->
 <!-- [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) -->
@@ -104,11 +104,11 @@ _This program also makes use of SQL databases. We recommend using MySQL Workbenc
 
 ## User Stories
 
-* As a user, I want to GET and POST reviews about travel destinations.
-* As a user, I want to GET reviews by country or city.
-* As a user, I want to see the most popular travel destinations by number of reviews or by overall rating.
-* As a user, I want to PUT and DELETE reviews, but only if I wrote them. (Start by requiring a user_name param to match the user_name of the author on the message. You can always try authentication later.)
-* As a user, I want to look up random destinations just for fun.
+- [x] As a user, I want to GET and POST reviews about travel destinations.
+- [x] As a user, I want to GET reviews by country or city.
+- [ ] As a user, I want to see the most popular travel destinations by number of reviews or by overall rating.
+- [ ] As a user, I want to PUT and DELETE reviews, but only if I wrote them. (Start by requiring a user_name param to match the user_name of the author on the message. You can always try authentication later.)
+- [ ] As a user, I want to look up random destinations just for fun.
 
 
 ## Screenshots
@@ -129,10 +129,10 @@ _There are currently no known bugs in this program_
 
 ## Support and contact details
 
-_If there are any question or concerns please contact us at our emails: [Tiffany Siu](mailto:tsiu88@gmail.com) and [Jiwon Han](mailto:jiwon1.han@gmail.com). Thank you._
+_If there are any question or concerns please contact us at our emails: [Tiffany Siu](mailto:tsiu88@gmail.com), [Jiwon Han](mailto:jiwon1.han@gmail.com), and [Adela Darmansyah](mailto:adela.yohana@gmail.com). Thank you._
 
 ### License
 
 *This software is licensed under the MIT license*
 
-Copyright (c) 2020 **_Tiffany Siu, Jiwon Han_**
+Copyright (c) 2020 **_Tiffany Siu, Jiwon Han, Adela Darmansyah_**
