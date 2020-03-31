@@ -23,6 +23,9 @@ namespace TravelApi
             services.AddDbContext<TravelApiContext>(opt =>
                 opt.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            // .AddJsonOptions(options => {
+            // options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            // });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

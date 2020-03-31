@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace TravelApi.Models
 {
@@ -9,6 +10,7 @@ namespace TravelApi.Models
     public int CityId {get; set;}
     [Required]
     public string CityName {get; set;}
+    [JsonIgnore] 
     public virtual ICollection<Review> Reviews{get; set;}
     [Required]
 

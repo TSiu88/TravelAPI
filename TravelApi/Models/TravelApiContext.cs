@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using System;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace TravelApi.Models
 {
@@ -9,17 +8,12 @@ namespace TravelApi.Models
         public TravelApiContext(DbContextOptions<TravelApiContext> options)
             : base(options)
         {
-          // Database.EnsureCreated();
         }
 
         public DbSet<Country> Countries {get; set;}
         public DbSet<City> Cities { get; set; }
         public DbSet<Review> Reviews { get; set; }
 
-        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        // {
-        //     optionsBuilder.UseLazyLoadingProxies();
-        // }
       protected override void OnModelCreating(ModelBuilder builder)
     {
       builder.Entity<Country>()
@@ -31,10 +25,6 @@ namespace TravelApi.Models
         new Country { CountryId = 5, CountryName = "Russia"}
       );
 
-      // builder.Entity<Country>()
-      // .HasMany(country=>country.Cities)
-      // .WithOne(city=>city.Country);
-
       builder.Entity<City>()
       .HasData(
         new City { CityId = 1, CountryId = 1, CityName = "Seoul"},
@@ -45,17 +35,6 @@ namespace TravelApi.Models
         new City { CityId = 6, CountryId = 2, CityName = "Beijing"}
       );
       
-      // builder.Entity<City>()
-      // .HasOne(city=>city.Country)
-      // .WithMany(country=>country.Cities)
-      // .HasForeignKey(city => city.CountryId)
-      // .IsRequired();
-
-      // builder.Entity<City>()
-      // .HasMany(city=>city.Reviews)
-      // .WithOne(review=>review.City);
-
-
       builder.Entity<Review>()
       .HasData(
         new Review { ReviewId = 1, CityId = 1, Title = "Amazing Night Culture", Content = "People are awake until late at night. Drinking is must-do thing", Rating = 5, Date = DateTime.Parse("2/2/2020"), UserName = "Emily"},
@@ -68,7 +47,6 @@ namespace TravelApi.Models
       );
     }
         
-    }
-
-    
+  }
+  
 }

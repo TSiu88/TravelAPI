@@ -22,7 +22,7 @@ namespace TravelApi.Controllers
     [HttpGet]
     public ActionResult<IEnumerable<Review>> Get(string city, string country)
     {
-      var query = _db.Reviews.Include(entry => entry.City).AsQueryable();
+      var query = _db.Reviews.Include(entry => entry.City).Include(entry => entry.City.Country).AsQueryable();
 
       if (city != null)
       {
@@ -34,7 +34,6 @@ namespace TravelApi.Controllers
       }
      
       return query.ToList();
-
     }
 
     // POST api/reviews
