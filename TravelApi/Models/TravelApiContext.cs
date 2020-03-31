@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-// using Microsoft.EntityFrameworkCore.Proxies;
 
 namespace TravelApi.Models
 {
@@ -30,7 +29,10 @@ namespace TravelApi.Models
         new Country { CountryId = 4, CountryName = "France"},
         new Country { CountryId = 5, CountryName = "Russia"}
       );
-      
+
+      // builder.Entity<Country>()
+      // .HasMany(country=>country.Cities)
+      // .WithOne(city=>city.Country);
 
       builder.Entity<City>()
       .HasData(
@@ -41,7 +43,18 @@ namespace TravelApi.Models
         new City { CityId = 5, CountryId = 5, CityName = "Moscow"},
         new City { CityId = 6, CountryId = 2, CityName = "Beijing"}
       );
-      // .HasRequired<City>(c => c.CityId);
+      
+      // builder.Entity<City>()
+      // .HasOne(city=>city.Country)
+      // .WithMany(country=>country.Cities)
+      // .HasForeignKey(city => city.CountryId)
+      // .IsRequired();
+
+      // builder.Entity<City>()
+      // .HasMany(city=>city.Reviews)
+      // .WithOne(review=>review.City);
+
+      
 
       builder.Entity<Review>()
       .HasData(

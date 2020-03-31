@@ -21,13 +21,19 @@ namespace TravelApi.Controllers
     [HttpGet]
     public ActionResult<IEnumerable<City>> Get()
     {
-      // List<Cities> cities = _db.Cities.ToList();
-      // cities.forEach(element => {
+      //CAUSES EXCEPTION DUE TO SELF REFERENCING LOOP
+      // List<City> cities = _db.Cities.ToList();
+      // foreach (City city in cities)
+      // {
+      //   IQueryable<Country> query = _db.Countries.AsQueryable();
+      //   city.Country = query.FirstOrDefault(entry => entry.CountryId == city.CountryId);
+      // }
+      // cities.foreach(element => {
       //    query = _db.Countries.AsQueryable();
       //    query = query.Where(entry => entry.CountryId == element.CountryId);
       //    element.Country = query;
       // });
-      // return cities;
+      //return cities;
       return _db.Cities.ToList();
     }
 
