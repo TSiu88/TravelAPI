@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using TravelApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using System;
 
 namespace TravelApi.Controllers
 {
@@ -50,6 +51,16 @@ namespace TravelApi.Controllers
     {
       var query = _db.Cities.Include(entry => entry.Country).OrderByDescending(city => city.Reviews.Count).AsQueryable();
 
+      return query.ToList();
+    }
+
+    // GET api/random
+    [HttpGet("random")]
+    public ActionResult<IEnumerable<City>> GetRandom()
+    {
+      var random = new Random();
+      int pick = random.Next(0, _db.Cities.Count());
+      var query = _db.Cities.OrderBy(a => random.Next()).Take(3).ToList();
       return query.ToList();
     }
 

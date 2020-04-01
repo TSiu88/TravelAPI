@@ -1,6 +1,6 @@
 # _[Travel API](https://github.com/TSiu88/TravelApi)_
 
-#### _Brief desc of Project, 03.30.2020 - 03.31.2020_
+#### _Brief desc of Project, 03.30.2020 - 04.01.2020_
 
 #### By _**Tiffany Siu, Jiwon Han, and Adela Darmansyah**_
 
@@ -114,9 +114,9 @@ _This program also makes use of SQL databases. We recommend using MySQL Workbenc
 
 - [x] As a user, I want to GET and POST reviews about travel destinations.
 - [x] As a user, I want to GET reviews by country or city.
-- [ ] As a user, I want to see the most popular travel destinations by number of reviews or by overall rating.
-- [ ] As a user, I want to PUT and DELETE reviews, but only if I wrote them. (Start by requiring a user_name param to match the user_name of the author on the message. You can always try authentication later.)
-- [ ] As a user, I want to look up random destinations just for fun.
+- [x] As a user, I want to see the most popular travel destinations by number of reviews or by overall rating.
+- [x] As a user, I want to PUT and DELETE reviews, but only if I wrote them. (Start by requiring a user_name param to match the user_name of the author on the message. You can always try authentication later.)
+- [x] As a user, I want to look up random destinations just for fun.
 
 
 ## Screenshots

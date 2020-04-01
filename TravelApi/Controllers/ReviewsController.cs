@@ -44,47 +44,34 @@ namespace TravelApi.Controllers
       _db.SaveChanges();  
 
       City city = _db.Cities.Find(review.CityId);
-      //City city = review.City;
       double averageRating =  _db.Cities.Where(entry => entry.CityName == city.CityName)
         .Include(entry => entry.Reviews).SelectMany(entry => entry.Reviews).Average(x => x.Rating);
       city.OverallRating = averageRating;
-      _db.SaveChanges();
-      // if (review.City.Reviews.Count < 2)
-      // {
-      //   review.City.OverallRating = review.Rating;
-      // }
-      // else
-      // {
-      //   review.City.OverallRating = (review.City.OverallRating + review.Rating)/2;
-      // }
-      // var selectedCity = _db.Cities.Where(city => city.CityId == review.CityId).Include(city => city.Reviews);
-      // //update overall rating here
-      // if (selectedCity.Reviews.Count < 2)
-      // {
-      //   selectedCity.OverallRating = review.Rating;
-      // } 
-      // else
-      // {
-      //   selectedCity.OverallRating = (selectedCity.OverallRating + review.Rating) / 2;
-      // }
-      // _db.Entry(selectedCity).State = EntityState.Modified;
-      // _db.SaveChanges();   
+      _db.SaveChanges();  
     }
 
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody] Review review)
+    public void Put(int id, [FromBody] Review review, string username)
     {
+      if(review.UserName.ToLower() == username.ToLower())
+      {
         review.ReviewId = id;
         _db.Entry(review).State = EntityState.Modified;
         _db.SaveChanges();
+      }
+        
     }
 
     [HttpDelete("{id}")]
-    public void Delete(int id)
+    public void Delete(int id, string username)
     {
       var ReviewToDelete = _db.Reviews.FirstOrDefault(entry => entry.ReviewId == id);
-      _db.Reviews.Remove(ReviewToDelete);
-      _db.SaveChanges();
+      if(ReviewToDelete.UserName.ToLower() == username.ToLower())
+      {
+        _db.Reviews.Remove(ReviewToDelete);
+        _db.SaveChanges();
+      }
+      
     }
   }
 }
