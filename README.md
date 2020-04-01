@@ -35,6 +35,14 @@ Tiffany Siu, Jiwon Han
 - Get the most popular travel destinations by number of reviews or by overall rating
 - PUT and DELETE reviews if it matches with user name
 - Get random three destination 
+- Struggles:
+  - adding overallrating to cities
+  - sorting column randomly to use skip/take
+- TO DO:
+  [ ] fix 500 internal error when edit/delete w/o username
+  [ ] actual authentication 
+  [ ] MVC that calls on API created
+  [ ] Practice what Friday requirements are (need to include authentication, versioning, pagination, Swagger, or CORS)
 
 #### 3/31/20 Work at Home Summary
 Tiffany Siu, Jiwon Han, and Adela Darmansyah
@@ -82,7 +90,7 @@ _This program also makes use of SQL databases. We recommend using MySQL Workbenc
 1. Download and install .NET Core from the [official website](https://dotnet.microsoft.com/download/dotnet-core/)
 2. Download and install MySQL Workbench and Community Server for Mac or Windows by following the instructions [here](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-and-configuring-mysql).
 3. Click clone the [repository](https://github.com/TSiu88/TravelAPI.git) from my [GitHub page](https://github.com/TSiu88) to copy the repository link
-4. Use a command line interface to type `git clone (repository-link-here)` to copy the project into the current folder and then move into the repository's directory that was just created with `cd (project-name-here)`
+4. Use a command line interface to type `git clone (repository-link-here)` to copy the project into the current folder and then move into the repository's directory that was just 4 with `cd (project-name-here)`
 5. Start up a local server by opening MySQL Workbench and adding a `MySQL Connections` using the default IP address and Port (IP 127.0.0.1, Port 3306), username (root), and password from setup.
 6. Run `dotnet restore` and `dotnet build` in command line interface of the repository's main project directory
 7. Run `dotnet run` to start up the program in the command line interface
