@@ -27,12 +27,12 @@ namespace TravelApi.Models
 
       builder.Entity<City>()
       .HasData(
-        new City { CityId = 1, CountryId = 1, CityName = "Seoul"},
-        new City { CityId = 2, CountryId = 2, CityName = "Shanghai"},
-        new City { CityId = 3, CountryId = 3, CityName = "Singapore"},
-        new City { CityId = 4, CountryId = 4, CityName = "Paris"},
-        new City { CityId = 5, CountryId = 5, CityName = "Moscow"},
-        new City { CityId = 6, CountryId = 2, CityName = "Beijing"}
+        new City { CityId = 1, CountryId = 1, CityName = "Seoul", OverallRating = 5},
+        new City { CityId = 2, CountryId = 2, CityName = "Shanghai", OverallRating = 5},
+        new City { CityId = 3, CountryId = 3, CityName = "Singapore", OverallRating = 3},
+        new City { CityId = 4, CountryId = 4, CityName = "Paris", OverallRating = 3.5},
+        new City { CityId = 5, CountryId = 5, CityName = "Moscow", OverallRating = 3},
+        new City { CityId = 6, CountryId = 2, CityName = "Beijing", OverallRating = 2}
       );
       
       builder.Entity<Review>()

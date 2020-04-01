@@ -26,7 +26,7 @@ namespace TravelApi.Controllers
 
       if (city != null)
       {
-       ;
+        query = query.Where(entry => entry.City.CityName == city);
       }
       if (country != null)
       {
@@ -42,6 +42,13 @@ namespace TravelApi.Controllers
     {
       _db.Reviews.Add(review);
       _db.SaveChanges();  
+
+      City city = _db.Cities.Find(review.CityId);
+      //City city = review.City;
+      double averageRating =  _db.Cities.Where(entry => entry.CityName == city.CityName)
+        .Include(entry => entry.Reviews).SelectMany(entry => entry.Reviews).Average(x => x.Rating);
+      city.OverallRating = averageRating;
+      _db.SaveChanges();
       // if (review.City.Reviews.Count < 2)
       // {
       //   review.City.OverallRating = review.Rating;
