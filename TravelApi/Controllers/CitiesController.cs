@@ -59,7 +59,6 @@ namespace TravelApi.Controllers
     public ActionResult<IEnumerable<City>> GetRandom()
     {
       var random = new Random();
-      int pick = random.Next(0, _db.Cities.Count());
       var query = _db.Cities.OrderBy(a => random.Next()).Take(3).ToList();
       return query.ToList();
     }

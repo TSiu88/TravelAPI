@@ -2,7 +2,7 @@
 
 #### _Brief desc of Project, 03.30.2020 - 04.01.2020_
 
-#### By _**Tiffany Siu, Jiwon Han, and Adela Darmansyah**_
+#### By _**Tiffany Siu, Jiwon Han and Adela Darmansyah**_
 
 <!-- [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive) -->
 <!-- [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) -->
@@ -29,7 +29,15 @@
 ---
 ## Description
 
+#### 4/01/20 Work at Home Summary
+Tiffany Siu, Jiwon Han
+- Travel API
+- Get the most popular travel destinations by number of reviews or by overall rating
+- PUT and DELETE reviews if it matches with user name
+- Get random three destination 
+
 #### 3/31/20 Work at Home Summary
+Tiffany Siu, Jiwon Han, and Adela Darmansyah
 - Travel API
 - Struggles:
   - return type for api calls
@@ -38,6 +46,7 @@
   - calculate average of ratings when creating reviews
 
 #### 3/30/20 Work at Home Summary
+Tiffany Siu, Jiwon Han
 - CretaceousPark Example
 - Console API Call Example
 - MVC API Call Example
@@ -137,7 +146,7 @@ _There are currently no known bugs in this program_
 
 ## Support and contact details
 
-_If there are any question or concerns please contact us at our emails: [Tiffany Siu](mailto:tsiu88@gmail.com), [Jiwon Han](mailto:jiwon1.han@gmail.com), and [Adela Darmansyah](mailto:adela.yohana@gmail.com). Thank you._
+_If there are any question or concerns please contact us at our emails: [Tiffany Siu](mailto:tsiu88@gmail.com), [Jiwon Han](mailto:jiwon1.han@gmail.com), and and [Adela Darmansyah](mailto:adela.yohana@gmail.com).Thank you._
 
 ### License
 

@@ -58,6 +58,12 @@ namespace TravelApi.Controllers
         review.ReviewId = id;
         _db.Entry(review).State = EntityState.Modified;
         _db.SaveChanges();
+        
+        City city = _db.Cities.Find(review.CityId);
+        double averageRating =  _db.Cities.Where(entry => entry.CityName == city.CityName)
+          .Include(entry => entry.Reviews).SelectMany(entry => entry.Reviews).Average(x => x.Rating);
+        city.OverallRating = averageRating;
+        _db.SaveChanges();  
       }
         
     }
@@ -68,8 +74,13 @@ namespace TravelApi.Controllers
       var ReviewToDelete = _db.Reviews.FirstOrDefault(entry => entry.ReviewId == id);
       if(ReviewToDelete.UserName.ToLower() == username.ToLower())
       {
+        City city = _db.Cities.Find(ReviewToDelete.CityId);
         _db.Reviews.Remove(ReviewToDelete);
         _db.SaveChanges();
+        double averageRating =  _db.Cities.Where(entry => entry.CityName == city.CityName)
+          .Include(entry => entry.Reviews).SelectMany(entry => entry.Reviews).Average(x => x.Rating);
+        city.OverallRating = averageRating;
+        _db.SaveChanges();  
       }
       
     }
