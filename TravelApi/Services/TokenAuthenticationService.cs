@@ -38,8 +38,8 @@ namespace TravelApi.Services
       var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_tokenManagement.Secret));
       var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
       var jwtToken = new JwtSecurityToken(
-        _tokenManagement.Issuer,
-        _tokenManagement.Audience,
+        issuer: _tokenManagement.Issuer,
+        audience: _tokenManagement.Audience,
         claims: claim,
         expires:DateTime.Now.AddMinutes(_tokenManagement.AccessExpiration),
         signingCredentials: credentials

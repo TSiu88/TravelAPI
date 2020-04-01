@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using TravelApi.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TravelApi.Controllers
 {
@@ -20,6 +21,7 @@ namespace TravelApi.Controllers
 
     // GET api/reviews
     [HttpGet]
+    [AllowAnonymous]
     public ActionResult<IEnumerable<Review>> Get(string city, string country)
     {
       var query = _db.Reviews.Include(entry => entry.City).Include(entry => entry.City.Country).AsQueryable();
@@ -38,6 +40,7 @@ namespace TravelApi.Controllers
 
     // POST api/reviews
     [HttpPost]
+    [AllowAnonymous]
     public void Post([FromBody] Review review)
     {
       _db.Reviews.Add(review);
@@ -50,11 +53,12 @@ namespace TravelApi.Controllers
       _db.SaveChanges();  
     }
 
+    [Authorize]
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody] Review review, string username)
+    public void Put(int id, [FromBody] Review review)
     {
-      if(review.UserName.ToLower() == username.ToLower())
-      {
+      // if(review.UserName.ToLower() == username.ToLower())
+      // {
         review.ReviewId = id;
         _db.Entry(review).State = EntityState.Modified;
         _db.SaveChanges();
@@ -64,16 +68,17 @@ namespace TravelApi.Controllers
           .Include(entry => entry.Reviews).SelectMany(entry => entry.Reviews).Average(x => x.Rating);
         city.OverallRating = averageRating;
         _db.SaveChanges();  
-      }
+      // }
         
     }
 
+    [Authorize]
     [HttpDelete("{id}")]
-    public void Delete(int id, string username)
+    public void Delete(int id)
     {
       var ReviewToDelete = _db.Reviews.FirstOrDefault(entry => entry.ReviewId == id);
-      if(ReviewToDelete.UserName.ToLower() == username.ToLower())
-      {
+      // if(ReviewToDelete.UserName.ToLower() == username.ToLower())
+      // {
         City city = _db.Cities.Find(ReviewToDelete.CityId);
         _db.Reviews.Remove(ReviewToDelete);
         _db.SaveChanges();
@@ -81,7 +86,7 @@ namespace TravelApi.Controllers
           .Include(entry => entry.Reviews).SelectMany(entry => entry.Reviews).Average(x => x.Rating);
         city.OverallRating = averageRating;
         _db.SaveChanges();  
-      }
+      // }
       
     }
   }
