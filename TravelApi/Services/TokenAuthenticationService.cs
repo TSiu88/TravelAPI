@@ -8,12 +8,16 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using TravelApi.Entities;
 using TravelApi.Helpers;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Microsoft.AspNetCore.Http;
 
 namespace TravelApi.Services
 {
   public interface IAuthenticateService
   {
     bool IsAuthenticated(TokenRequest request, out string token);
+    bool UserIsValid(string username, string password);
   }
 
   public class TokenAuthenticationService : IAuthenticateService
@@ -45,7 +49,20 @@ namespace TravelApi.Services
         signingCredentials: credentials
       );
       token = new JwtSecurityTokenHandler().WriteToken(jwtToken);
+      HttpClient client = new HttpClient();
+      // client.BaseAddress = new Uri(_tokenManagement.Issuer);
+      // var contentType = new MediaTypeWithQualityHeaderValue
+      // ("application/json");
+      // client.DefaultRequestHeaders.Accept.Add(contentType);
+      //client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
+      client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+      Headers.WwwAuthenticate.Add(new AuthenticationHeaderValue("bearer", token));
       return true;
+    }
+
+    public bool UserIsValid (string username, string password)
+    {
+      return _userManagementService.IsValidUser(username, password);
     }
   }
 }

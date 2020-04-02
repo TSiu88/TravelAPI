@@ -20,11 +20,11 @@ namespace TravelApi.Services
     {
         public bool IsValidUser(string userName , string password)
         {
-            if(userName != "" && password != "")
+            if(userName == "" || userName == null)
             {
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
     }
 }
