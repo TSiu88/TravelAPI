@@ -35,4 +35,17 @@ public class AuthenticationController : ControllerBase
 
     }
 
+    // [AllowAnonymous]  
+    // [HttpPost("token")]  
+    // public IActionResult Authenticate([FromBody] TokenRequest userParam) {  
+    //     var user = UserManagementService.IsValidUser(userParam.Username, userParam.Password);  
+
+    //     if (user == false) {  
+    //         return BadRequest(new {  
+    //             message = "UserName or Password is invalid"  
+    //         });  
+    //     }  
+    //     return Ok(user);  
+    // }  
+
 }

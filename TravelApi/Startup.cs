@@ -39,6 +39,7 @@ namespace TravelApi
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(x =>
             {
                 x.RequireHttpsMetadata = false;
@@ -111,6 +112,7 @@ namespace TravelApi
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication();
             //app.UseHttpsRedirection();
+            //app.UseAuthorization();
             app.UseMvc();
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.  
