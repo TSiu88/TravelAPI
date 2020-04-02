@@ -56,7 +56,7 @@ namespace TravelApi.Services
       // client.DefaultRequestHeaders.Accept.Add(contentType);
       //client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
       client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-      Headers.WwwAuthenticate.Add(new AuthenticationHeaderValue("bearer", token));
+      //Headers.WwwAuthenticate.Add(new AuthenticationHeaderValue("bearer", token));
       return true;
     }
 

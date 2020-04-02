@@ -1,6 +1,6 @@
 # _[Travel API](https://github.com/TSiu88/TravelApi)_
 
-#### _Brief desc of Project, 03.30.2020 - 04.01.2020_
+#### _Brief desc of Project, 03.30.2020 - 04.02.2020_
 
 #### By _**Tiffany Siu, Jiwon Han and Adela Darmansyah**_
 
@@ -29,22 +29,33 @@
 ---
 ## Description
 
+#### 4/02/20 Work at Home Summary
+- Travel API
+  - Try fixes for authentication getting token but not applying
+  - Able to get to work in Postman if manually copy paste token into a header named "Authorization", can't get app to create header automatically
+- MVC Travel API Client
+  - Add basics that call on custom API
+- Struggles
+  - JWT token based authentication
+  - JSON deserialilze objects not having null reference exception
+
 #### 4/01/20 Work at Home Summary
 Tiffany Siu, Jiwon Han
 - Travel API
-- Get the most popular travel destinations by number of reviews or by overall rating
-- PUT and DELETE reviews if it matches with user name
-- Get random three destination 
-- JWT authentication and Swagger
+  - Get the most popular travel destinations by number of reviews or by overall rating
+  - PUT and DELETE reviews if it matches with user name
+  - Get random three destination 
+  - JWT authentication and Swagger
 - Struggles:
   - adding overallrating to cities
   - sorting column randomly to use skip/take
   - JWT Authentication application after adding token
 - TO DO:
+
   [ ] fix 500 internal error when edit/delete w/o username
   [ ] actual authentication 
   [ ] MVC that calls on API created
-  [ ] Practice what Friday requirements are (need to include authentication, versioning, pagination, Swagger, or CORS)
+  [x] Practice what Friday requirements are (need to include authentication, versioning, pagination, Swagger, or CORS)
 
 #### 3/31/20 Work at Home Summary
 Tiffany Siu, Jiwon Han, and Adela Darmansyah
