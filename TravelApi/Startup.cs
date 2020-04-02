@@ -13,6 +13,7 @@ using System.Text;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Swagger; 
 using Newtonsoft.Json; 
+using System.Collections.Generic;
 
 namespace TravelApi
 {
@@ -56,7 +57,35 @@ namespace TravelApi
             services.AddSwaggerGen(c =>  
             {  
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });  
-            }); 
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = "Please insert JWT with Bearer into field",
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            },
+                            Scheme = "oauth2",
+                            Name = "Bearer",
+                            In = ParameterLocation.Header,
+
+                        },
+                        new List<string>()
+                    }
+                }); 
+            });
+            
+
+                
 
             // services.AddApiVersioning(o => {
 		    //     o.ReportApiVersions = true;
@@ -90,7 +119,7 @@ namespace TravelApi
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.  
              app.UseSwaggerUI(c =>  
             {  
-             c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");  
+             c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
              });
         }
     }

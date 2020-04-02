@@ -57,8 +57,10 @@ namespace TravelApi.Controllers
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] Review review)
     {
-      // if(review.UserName.ToLower() == username.ToLower())
+      //if(review.UserName.ToLower() == username.ToLower())
       // {
+      //if(HttpContext.User.HasClaim(c=> c.Type == ClaimType.Name)
+      //{
         review.ReviewId = id;
         _db.Entry(review).State = EntityState.Modified;
         _db.SaveChanges();
@@ -68,7 +70,7 @@ namespace TravelApi.Controllers
           .Include(entry => entry.Reviews).SelectMany(entry => entry.Reviews).Average(x => x.Rating);
         city.OverallRating = averageRating;
         _db.SaveChanges();  
-      // }
+      //}
         
     }
 

@@ -35,9 +35,11 @@ Tiffany Siu, Jiwon Han
 - Get the most popular travel destinations by number of reviews or by overall rating
 - PUT and DELETE reviews if it matches with user name
 - Get random three destination 
+- JWT authentication and Swagger
 - Struggles:
   - adding overallrating to cities
   - sorting column randomly to use skip/take
+  - JWT Authentication application after adding token
 - TO DO:
   [ ] fix 500 internal error when edit/delete w/o username
   [ ] actual authentication 
