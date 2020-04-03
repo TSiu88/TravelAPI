@@ -37,7 +37,7 @@
   - Add basics that call on custom API
 - Struggles
   - JWT token based authentication
-  - JSON deserialilze objects not having null reference exception
+  - JSON deserialilze objects having null reference exception for getting data from API
 
 #### 4/01/20 Work at Home Summary
 Tiffany Siu, Jiwon Han
