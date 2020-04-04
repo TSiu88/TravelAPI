@@ -50,11 +50,14 @@ Tiffany Siu, Jiwon Han
   - adding overallrating to cities
   - sorting column randomly to use skip/take
   - JWT Authentication application after adding token
-- TO DO:
 
-  [ ] fix 500 internal error when edit/delete w/o username
+
+#### TO DO:
+
   [ ] actual authentication 
-  [ ] MVC that calls on API created
+
+  [x] MVC that calls on API created
+
   [x] Practice what Friday requirements are (need to include authentication, versioning, pagination, Swagger, or CORS)
 
 #### 3/31/20 Work at Home Summary
@@ -113,7 +116,9 @@ _This program also makes use of SQL databases. We recommend using MySQL Workbenc
 * _C#_
 * _HTML_
 * _CSS_
-* _MSTest_
+* _Swagger Swashbuckler UI_
+* _Token-based Authentication_
+ * _CORS_
 * _Razor_
 * _Markdown_
 
