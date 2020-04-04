@@ -163,7 +163,7 @@ _Here is a preview of what the output looks like:_
 
 ## Known Bugs
 
-_There are currently no known bugs in this program_
+_Authentication gives tokens but does not automatically create "Authorization" header with token.  Authorization only works if token manually added into an Authorization header._
 
 ## Support and contact details
 
